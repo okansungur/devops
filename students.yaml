@@ -1,0 +1,51 @@
+---
+
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: students
+  namespace: prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: students
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: students
+    spec:
+      volumes:
+      - name: myvol
+        emptyDir: {}
+      serviceAccountName: default
+      containers:
+        - name: students
+          volumeMounts:
+          - mountPath: /tmp
+            name: myvol
+          image: okn77/sample-service:v1
+          imagePullPolicy: "Always"
+          securityContext:
+            capabilities:
+              drop:
+               - NET_RAW
+            runAsNonRoot: true
+            runAsUser: 100
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+   
+          resources:
+           requests:
+            memory: "256Mi"
+            cpu: "200m"
+           limits:
+            memory: "512Mi"
+            cpu: "500m"
+   
+ 
+
+---   
