@@ -1,27 +1,24 @@
-# SampleService
+# VirtualBox
 
-
+```
 sudo ufw allow 6443/tcp
 sudo ufw allow 2379:2380/tcp
 sudo ufw allow 10250/tcp
 sudo ufw allow 10259/tcp
 sudo ufw allow 10257/tcp
+```
 
 
-
-# Talisman  Not able to catch pass.txt :)  It checks before commiting the code
-
+# Talisman  
+Not able to catch pass.txt :)  It checks before commiting the code.
 Talisman is a tool that installs a hook to your repository to ensure that potential secrets or sensitive information do not leave the developer's workstation.
-
 Installation to a single project
 
-
 # Download the talisman binary
-
+```
 curl https://thoughtworks.github.io/talisman/install.sh > ~/install-talisman.sh
 
 chmod +x ~/install-talisman.sh
-
 
 # Install to a single project (as pre-push hook)
 
@@ -29,7 +26,7 @@ cd my-git-project
 
 ~/install-talisman.sh
 
-
+```
 
 
 
@@ -388,7 +385,7 @@ pipeline {
 
  ```
  
-##  HashiCorp Vault 
+##  HashiCorp Vault (Securing Credentials)
 Kubernetes secrets are base64 format.Encyrpt etcd data is the first way of securing data.
 HashiCorp Vault: is another way. Vault is a tool for securely accessing secrets
 git clone --branch v0.16.0 https://github.com/hashicorp/vault-helm.git
