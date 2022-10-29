@@ -257,13 +257,15 @@ With Docker image , or curl
 
 
 ## OWASP-ZAP
-
-OWASP ZAP is an open-source web application security scanner. It is intended to be used by both those new to application security as well as professional penetration testers. It is one of the most active Open Web Application Security Project projects and has been given Flagship status.
+OWASP ZAP - A full featured free and open source DAST tool that includes both automated scanning for vulnerabilities and tools to assist expert manual web app pen testing.OWASP ZAP is an open-source web application security scanner. It is intended to be used by both those new to application security as well as professional penetration testers. It is one of the most active Open Web Application Security Project projects and has been given Flagship status.
 
 https://springdoc.org/
-//Worker node sudo ufw allow 31932/tcp
-curl  192.168.0.11:31932/MySpringBootWeb/hello  
 
+//Worker node 
+```
+sudo ufw allow 31932/tcp
+curl  192.168.0.11:31932/MySpringBootWeb/hello  
+```
 
 
 For slack messages with groovy place sendNotification.groovy inside vars folder.
@@ -280,7 +282,7 @@ Center for Internet Security best practice security recommendations.kube-bench i
 __Kube-Bench__: An Open Source Tool for Running Kubernetes CIS Benchmark Tests
 
 https://github.com/aquasecurity/kube-bench/blob/main/docs/installation.md#download-and-install-binaries
-
+```
 With the docker image:
  docker run --rm -v `pwd`:/host docker.io/aquasec/kube-bench:latest install
  or
@@ -303,7 +305,7 @@ chown etcd:etcd /var/lib/etcd
 useradd etcd
 
 
-
+```
 
 
 Sample request for Istio
